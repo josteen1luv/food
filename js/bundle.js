@@ -127,9 +127,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _services_services__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/services */ "./js/services/services.js");
-
-
 function  cards(){
     //CARD CLASSES
 
@@ -172,13 +169,35 @@ function  cards(){
             this.parent.append(element);
         }
     }
-
-    (0,_services_services__WEBPACK_IMPORTED_MODULE_0__.getResource)('http://localhost:3000/menu')
-        .then(data =>{
-            data.forEach(({img, altimg, title, descr, price}) =>{
-                new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
-            });
-        });
+    const data = [
+        {
+            "img": "img/tabs/vegy.jpg",
+            "altimg": "fitness",
+            "title": "Menu 'Fitness'",
+            "descr": "Menu 'Fitness' is a new approach to cooking: more fresh vegetables and fruits. For people who are interested in sports. It is a completely new product with optimal price and high quality!",
+            "price": 9,
+            "id": "d1f0"
+        },
+        {
+            "img": "img/tabs/post.jpg",
+            "altimg": "vegan",
+            "title": "Menu 'Vegan'",
+            "descr": "Our special 'Vegan' Menu is a careful selection of ingredients: total absence of animal products. Complete harmony with yourself and nature in every element!",
+            "price": 14,
+            "id": "d34e"
+        },
+        {
+            "img": "img/tabs/elite.jpg",
+            "altimg": "elite",
+            "title": "Menu 'Premium'",
+            "descr": "Menu 'Premium' - we use not only beautiful packaging design, but also high-quality execution of dishes. Red fish, seafood, fruits - restaurant menu without going to a restaurant!",
+            "price": 21,
+            "id": "2ffa"
+        }
+    ]
+    data.forEach(({img, altimg, title, descr, price}) =>{
+        new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+    });
 
 }
 
